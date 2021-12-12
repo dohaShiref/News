@@ -21,7 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
     super.initState();
   }
 
-  Category? selectedCatogory;
+   Category selectedCatogory;
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         body: selectedCatogory == null
             ? CategoriesFragment(onCategoryClickCallBack)
-            : HomeFragment(selectedCatogory!),
+            : HomeFragment(selectedCatogory),
       ),
     );
   }

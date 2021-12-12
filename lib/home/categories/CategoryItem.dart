@@ -27,7 +27,7 @@ class CategoryItem extends StatelessWidget {
                     : Radius.circular(0))),
         child: Column(children: [
           Image.asset(
-            category.imagePath,
+            category.imagePath??'',
             height: 120,
             fit: BoxFit.fill,
           ),

@@ -3,7 +3,7 @@ class SourcesResponse {
   String status;
   List<Source> sources;
 
-  SourcesResponse({required this.status, required this.sources});
+  SourcesResponse({ this.status,  this.sources});
 
   factory SourcesResponse.fromJson(Map<String, dynamic> map) {
     List list = map['sources'];
@@ -22,13 +22,13 @@ class Source {
   String language;
 
   Source(
-      {required this.id,
-      required this.name,
-      required this.description,
-      required this.url,
-      required this.category,
-      required this.country,
-      required this.language});
+      { this.id,
+       this.name,
+       this.description,
+       this.url,
+       this.category,
+       this.country,
+       this.language});
 
   factory Source.fromJson(Map<String, dynamic> map) {
     return Source(

@@ -5,7 +5,7 @@ import 'package:news_application/model/NewsResponse.dart';
 import 'package:news_application/model/SouresResponse.dart';
 
 class NewsFragment extends StatefulWidget {
-  Source source;
+  final Source source;
 
   NewsFragment(this.source);
 
@@ -14,7 +14,7 @@ class NewsFragment extends StatefulWidget {
 }
 
 class _NewsFragmentState extends State<NewsFragment> {
-  late Future<NewsResponse> newsFuture;
+  Future<NewsResponse> newsFuture;
 
   @override
   void initState() {
@@ -32,12 +32,12 @@ class _NewsFragmentState extends State<NewsFragment> {
           if (snapShot.hasData) {
             return ListView.builder(
               itemBuilder: (buildContext, index) {
-                return NewsListItem(snapShot.data!.articles[index]);
+                return NewsListItem(snapShot.data.articles[index]);
               },
-              itemCount: snapShot.data!.articles.length,
+              itemCount: snapShot.data.articles.length??0,
             );
           } else if (snapShot.hasError) {
-            return Text('Error loading news');
+            return Text(snapShot.error.toString());
           }
           return Center(
             child: CircularProgressIndicator(),

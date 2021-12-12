@@ -7,5 +7,5 @@ class Category {
   Color color;
   bool rightSided;
 
-  Category({required this.id, required this.title, required this.imagePath, required this.color, required this.rightSided});
+  Category({ this.id,  this.title,  this.imagePath,  this.color,  this.rightSided});
 }

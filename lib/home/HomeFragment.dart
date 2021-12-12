@@ -18,7 +18,7 @@ class HomeFragment extends StatefulWidget {
 }
 
 class _HomeFragmentState extends State<HomeFragment> {
-  late Future<SourcesResponse> newsFuture;
+  Future<SourcesResponse> newsFuture;
 
   @override
   void initState() {
@@ -34,7 +34,7 @@ class _HomeFragmentState extends State<HomeFragment> {
         future: newsFuture,
         builder: (builContext, snapShot) {
           if (snapShot.hasData) {
-            return HomeTabs(snapShot.data!.sources);
+            return HomeTabs(snapShot.data.sources);
           } else if (snapShot.hasError) {
             return Text('error loading data'); // assignment reload
           }
